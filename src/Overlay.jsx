@@ -218,7 +218,7 @@ const Overlay = ({ stats }) => {
 								fontSize: 24,
 								fontFamily: 'extraBold',
 							}}>
-							{p1Score === null ? <span>{stats[0].homescore}</span> : <span>{p1Score}</span>}
+							{p1Score === null ? <span>{stats[0].homescore}</span> : <span></span>}
 						</text>
 						<text
 							textAnchor='middle'
@@ -228,7 +228,7 @@ const Overlay = ({ stats }) => {
 								fontSize: 24,
 								fontFamily: 'extraBold',
 							}}>
-							{p2Score === null ? <span>{stats[0].awayscore}</span> : <span>{p2Score}</span>}
+							{p2Score === null ? <span>{stats[0].awayscore}</span> : <span></span>}
 						</text>
 						<text
 							textAnchor='middle'

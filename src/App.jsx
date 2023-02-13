@@ -48,30 +48,26 @@ function App() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			async function FetchReq() {
-				if (!link === undefined) {
-					await axios({
-						url: link,
-						method: 'GET',
-						dataType: 'json',
+				await axios({
+					url: link,
+					method: 'GET',
+					dataType: 'json',
+				})
+					.catch((err) => {
+						console.error(err)
 					})
-						.catch((err) => {
-							console.error(err)
+					.then((response) => {
+						var data = Object.keys(response.data).map(function (key) {
+							return response.data[key]
 						})
-						.then((response) => {
-							var data = Object.keys(response.data).map(function (key) {
-								return response.data[key]
-							})
-							setIsLoading(false)
-							setStats(data)
-						})
-				}
-			}
-			if (!link === undefined) {
-				FetchReq()
+						setIsLoading(false)
+						setStats(data)
+					})
 			}
 		}, 5000)
+		fetchReq()
 		return () => clearInterval(interval)
-	}, [])
+	}, [link, stats, isLoading])
 
 	if (!stats[0])
 		return (

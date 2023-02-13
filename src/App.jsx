@@ -27,7 +27,7 @@ function App() {
 			})
 				.then(function (response) {
 					setCopy(response.data)
-					setUrl(response.data)
+					setLink(response.data)
 					setIsLoading(true)
 					console.log(response)
 					copyToClipboard()

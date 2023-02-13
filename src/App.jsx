@@ -4,6 +4,8 @@ import ExampleLink from '/ExampleLink.svg'
 import Asset1 from '/Asset1.svg'
 import Button from '@girishsawant999/react-loading-button'
 import './App.css'
+import { Multi } from './Multi.js'
+import { Overlay } from './Overlay.js'
 
 function App() {
 	const [drid, setDrid] = useState(null)
@@ -27,8 +29,8 @@ function App() {
 				url: `https://twism.vercel.app/matchid?matchid=${drid}`,
 			})
 				.then(function (response) {
-					setCopy(response.data)
-					setLink(response.data)
+					setCopy(response)
+					setLink(response)
 					setIsLoading(true)
 					console.log(response)
 					copyToClipboard()

@@ -23,7 +23,7 @@ function App() {
 			setMessage('Match ID Submitted Successfully')
 			await axios({
 				method: 'POST',
-				url: 'http://twism.vercel.app/api/livestream',
+				url: 'http://twism.vercel.app/matchid',
 				data: {
 					drid: drid,
 				},

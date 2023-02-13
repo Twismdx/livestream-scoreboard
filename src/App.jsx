@@ -19,29 +19,26 @@ function App() {
 		setDrid(e.target.value)
 	}
 
-	function handleSubmit(e) {
+	async function handleSubmit(e) {
 		e.preventDefault()
 		setIsLoading(true)
-		const interval = setInterval(async () => {
-			setMessage('Match ID Submitted Successfully')
-			await axios({
-				method: 'POST',
-				url: `https://twism.vercel.app/matchid?matchid=${drid}`,
+		setMessage('Match ID Submitted Successfully')
+		await axios({
+			method: 'POST',
+			url: `https://twism.vercel.app/matchid?matchid=${drid}`,
+		})
+			.then(function (response) {
+				setCopy(response)
+				console.log(response.data)
+				console.log(link)
+				setLink(response.data)
+				setIsLoading(true)
+				console.log(response)
+				copyToClipboard()
 			})
-				.then(function (response) {
-                    setCopy(response)
-                    console.log(response.data)
-                    console.log(link)
-					setLink(response.data)
-					setIsLoading(true)
-					console.log(response)
-					copyToClipboard()
-				})
-				.catch(function (error) {
-					console.log(error)
-				})
-		}, 5000)
-		return () => clearInterval(interval)
+			.catch(function (error) {
+				console.log(error)
+			})
 	}
 
 	function copyToClipboard() {
@@ -69,7 +66,7 @@ function App() {
 					})
 			}
 			FetchReq()
-		}, 5000)
+		}, 7000)
 		return () => clearInterval(interval)
 	}, [link, stats, isLoading])
 

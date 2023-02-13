@@ -30,9 +30,9 @@ function App() {
 			})
 				.then(function (response) {
                     setCopy(response)
-                    console.log(response)
+                    console.log(response.data)
                     console.log(link)
-					setLink(response)
+					setLink(response.data)
 					setIsLoading(true)
 					console.log(response)
 					copyToClipboard()

@@ -4,8 +4,8 @@ import ExampleLink from '/ExampleLink.svg'
 import Asset1 from '/Asset1.svg'
 import Button from '@girishsawant999/react-loading-button'
 import './App.css'
-import { Multi } from './Multi.js'
-import { Overlay } from './Overlay.js'
+import { Multi } from './Multi'
+import { Overlay } from './Overlay'
 
 function App() {
 	const [drid, setDrid] = useState(null)

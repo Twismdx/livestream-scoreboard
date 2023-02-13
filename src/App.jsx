@@ -32,7 +32,6 @@ function App() {
 				console.log(response.data)
 				console.log(link)
 				setLink(response.data)
-				console.log(response)
 				copyToClipboard()
 			})
 			.catch(function (error) {

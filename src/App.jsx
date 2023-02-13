@@ -25,7 +25,7 @@ function App() {
 				method: 'POST',
 				url: 'http://twism.vercel.app/matchid',
 				data: {
-					drid: drid,
+					matchid: drid,
 				},
 			})
 				.then(function (response) {

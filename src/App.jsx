@@ -21,10 +21,13 @@ function App() {
 		e.preventDefault()
 		const interval = setInterval(async () => {
 			setMessage('Match ID Submitted Successfully')
-			await axios
-				.post('http://twism.vercel.app/api/livestream', {
-					body: drid,
-				})
+			await axios({
+				method: 'POST',
+				url: 'http://twism.vercel.app/api/livestream',
+				data: {
+					drid: drid,
+				},
+			})
 				.then(function (response) {
 					setCopy(response.data)
 					setUrl(response.data)

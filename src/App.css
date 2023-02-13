@@ -1,10 +1,10 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  overflow-y: hidden;
-  overflow-x: hidden;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 @font-face {
@@ -36,23 +36,23 @@
 	font-size: 4rem;
 	font-weight: 800;
 	text-align: center;
-    font-family: 'semiBold';
+	font-family: 'semiBold';
 	justify-content: space-evenly;
 	margin-top: 3rem;
 	margin-bottom: 3rem;
-    line-height: 1.7rem;
+	line-height: 1.7rem;
 	color: rgb(255, 255, 255);
 }
 
 h2 {
-    font-family: 'semiBold';
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1rem;
-    color: #ffffff;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-    line-height: 1.7rem;
+	font-family: 'semiBold';
+	justify-content: center;
+	align-items: center;
+	font-size: 1.1rem;
+	color: #ffffff;
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+	line-height: 1.7rem;
 }
 
 .s0 {
@@ -79,7 +79,7 @@ h2 {
 
 a {
 	color: aqua;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .message {
@@ -103,23 +103,25 @@ a {
 	z-index: -1;
 }
 
-.input {
+input {
 	margin: 0 auto;
 	display: flex;
 	text-align: center;
 	width: 30rem;
-	height: 2rem;
+	height: 1rem;
 	padding: 0.5rem;
 	font-size: 1.1em;
-	font-weight: 500;
-	margin-bottom: 2rem;
+	font-family: 'semiBold';
+	background-color: white;
+	margin-bottom: 1rem;
 	z-index: 1000;
 }
 
 button {
 	height: 2rem;
-	width: 5rem;
-	border-radius: 0.5rem;
+	width: 10rem;
+	display: flex;
+	margin: 0 auto;
 }
 
 .button:hover {

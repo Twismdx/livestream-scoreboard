@@ -94,8 +94,6 @@ function App() {
 									</Button>
 								</form>
 								<br />
-								<br />
-								<br />
 								Pressing the button above will copy a link for you to paste in OBS, wirecast
 								etc, and then will also re-direct you to preview your scoreboard live.
 							</div>

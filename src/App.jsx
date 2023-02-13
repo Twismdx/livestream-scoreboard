@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import ExampleLink from './assets/ExampleLink.svg'
-import Asset1 from './assets/Asset1.svg'
+import ExampleLink from '/ExampleLink.svg'
+import Asset1 from '/Asset1.svg'
 import Button from '@girishsawant999/react-loading-button'
 import './App.css'
 
 function App() {
 	const [drid, setDrid] = useState(null)
 	const [isLoading, setIsLoading] = useState(false)
-	const [stats, setStats] = useState([])
 	const [message, setMessage] = useState()
 	const [copy, setCopy] = useState()
-	const [url, setUrl] = useState()
+	const [link, setLink] = useState()
+	const [stats, setStats] = useState([])
 
 	const onChange = (e) => {
 		setDrid(e.target.value)
@@ -50,26 +50,30 @@ function App() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			async function FetchReq() {
-				await axios({
-					url: url,
-					method: 'GET',
-					dataType: 'json',
-				})
-					.catch((err) => {
-						console.error(err)
+				if (!link === undefined) {
+					await axios({
+						url: link,
+						method: 'GET',
+						dataType: 'json',
 					})
-					.then((response) => {
-						var data = Object.keys(response.data).map(function (key) {
-							return response.data[key]
+						.catch((err) => {
+							console.error(err)
 						})
-						setIsLoading(false)
-						setStats(data)
-					})
+						.then((response) => {
+							var data = Object.keys(response.data).map(function (key) {
+								return response.data[key]
+							})
+							setIsLoading(false)
+							setStats(data)
+						})
+				}
 			}
-			FetchReq()
+			if (!link === undefined) {
+				FetchReq()
+			}
 		}, 5000)
 		return () => clearInterval(interval)
-	}, [url, stats, isLoading])
+	}, [])
 
 	if (!stats[0])
 		return (

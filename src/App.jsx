@@ -29,7 +29,8 @@ function App() {
 				url: `https://twism.vercel.app/matchid?matchid=${drid}`,
 			})
 				.then(function (response) {
-					setCopy(response)
+                    setCopy(response)
+                    console.log(response)
 					setLink(response)
 					setIsLoading(true)
 					console.log(response)

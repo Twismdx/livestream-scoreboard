@@ -19,6 +19,7 @@ function App() {
 
 	function handleSubmit(e) {
 		e.preventDefault()
+		setIsLoading(true)
 		const interval = setInterval(async () => {
 			setMessage('Match ID Submitted Successfully')
 			await axios({

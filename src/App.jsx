@@ -10,7 +10,8 @@ function App() {
 	const [isLoading, setIsLoading] = useState(false)
 	const [stats, setStats] = useState([])
 	const [message, setMessage] = useState()
-	const [copy, setCopy] = useState()
+    const [copy, setCopy] = useState()
+    const [url, setUrl] = useState()
 
 	const onChange = (e) => {
 		setDrid(e.target.value)
@@ -21,11 +22,12 @@ function App() {
 		const interval = setInterval(async () => {
 			setMessage('Match ID Submitted Successfully')
 			await axios
-				.post('/api/scoreboard/', {
+				.post('http://twism.vercel.app/api/livestream/', {
 					matchId: drid,
 				})
 				.then(function (response) {
-					setCopy(response.data)
+                    setCopy(response.data)
+                    setUrl(response.data)
 					setIsLoading(true)
 					console.log(response)
 					copyToClipboard()
@@ -42,7 +44,7 @@ function App() {
 		setMessage('Link Copied!')
 	}
 
-	useEffect(() => {
+    useEffect(() => {
 		const interval = setInterval(() => {
 			async function FetchReq() {
 				await axios({
@@ -64,7 +66,7 @@ function App() {
 			FetchReq()
 		}, 5000)
 		return () => clearInterval(interval)
-	}, [stats, isLoading])
+	}, [url, stats, isLoading])
 
 	if (!stats[0])
 		return (

@@ -31,6 +31,7 @@ function App() {
 				.then(function (response) {
                     setCopy(response)
                     console.log(response)
+                    console.log(link)
 					setLink(response)
 					setIsLoading(true)
 					console.log(response)

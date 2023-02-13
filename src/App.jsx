@@ -65,6 +65,7 @@ function App() {
 			}
 			FetchReq()
 		}, 7000)
+		console.log(stats)
 		return () => clearInterval(interval)
 	}, [link, stats, isLoading])
 

@@ -40,7 +40,7 @@ function App() {
 	}
 
 	function copyToClipboard() {
-		navigator.clipbaord.writeText(copy)
+		navigator.clipboard.writeText(copy)
 		setMessage('Link Copied!')
 	}
 

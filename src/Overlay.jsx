@@ -1,26 +1,8 @@
 import React, { useEffect } from 'react'
-import '../Root'
-import '../App.css'
-import { useGlobalContext } from './Context'
+import './App.css'
 
-const Overlay = () => {
-	const {
-		time,
-		p1Score,
-		p2Score,
-		clockStatus,
-		frameCount,
-		p1Name,
-		p2Name,
-		setp1Name,
-		setp2Name,
-		setTime,
-		setp1Score,
-		setp2Score,
-		setClockStatus,
-		setFrameCount,
-		stats,
-	} = useGlobalContext()
+const Overlay = ({ stats }) => {
+
 
 	return (
 		<div id='container-svg'>

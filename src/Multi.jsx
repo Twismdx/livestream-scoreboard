@@ -1,10 +1,7 @@
 import React from 'react'
-import '../App.css'
-import { useGlobalContext } from './Context'
+import './App.css'
 
-const Multi = () => {
-	const { stats } = useGlobalContext()
-
+const Multi = ({ stats }) => {
 	function Match2() {
 		return (
 			<div id='multi'>

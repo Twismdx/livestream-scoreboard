@@ -23,10 +23,7 @@ function App() {
 			setMessage('Match ID Submitted Successfully')
 			await axios({
 				method: 'POST',
-				url: 'http://twism.vercel.app/matchid',
-				data: {
-					matchid: drid,
-				},
+				url: `http://twism.vercel.app/matchid?matchid=${drid}`,
 			})
 				.then(function (response) {
 					setCopy(response.data)
